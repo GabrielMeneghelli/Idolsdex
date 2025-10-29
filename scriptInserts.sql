@@ -76,46 +76,75 @@ INSERT INTO Jogador (Nome, NacionalidadeId, PosicaoId, Altura, Imagem, Descricao
 ('Ousmane Dembélé', 4, 6, 1.78, '\\img\\jogadores\\ousmane_dembele.jpg', 'Atacante francês veloz e habilidoso, campeão da Bola de Ouro em 2025.');
 
 INSERT INTO Premio (Nome, Ano, JogadorId) VALUES
-('Bola de Ouro', 1956, 1),
-('Bola de Ouro', 1957, 2),
-('Bola de Ouro', 1958, 3),
-('Bola de Ouro', 1959, 2),
-('Bola de Ouro', 1960, 4),
-('Bola de Ouro', 1961, 5),
-('Bola de Ouro', 1963, 6),
-('Bola de Ouro', 1965, 7),
-('Bola de Ouro', 1971, 8),
-('Bola de Ouro', 1972, 9),
-('Bola de Ouro', 1973, 8),
-('Bola de Ouro', 1974, 8),
-('Bola de Ouro', 1976, 9),
-('Bola de Ouro', 1983, 10),
-('Bola de Ouro', 1984, 10),
-('Bola de Ouro', 1985, 10),
-('Bola de Ouro', 1988, 11),
-('Bola de Ouro', 1989, 11),
-('Bola de Ouro', 1992, 11),
-('Bola de Ouro', 1997, 12),
-('Bola de Ouro', 2002, 12),
-('Bola de Ouro', 2005, 13),
-('Bola de Ouro', 2007, 14),
-('Bola de Ouro', 2008, 15),
-('Bola de Ouro', 2013, 15),
-('Bola de Ouro', 2014, 15),
-('Bola de Ouro', 2016, 15),
-('Bola de Ouro', 2017, 15),
-('Bola de Ouro', 2009, 16),
-('Bola de Ouro', 2010, 16),
-('Bola de Ouro', 2011, 16),
-('Bola de Ouro', 2012, 16),
-('Bola de Ouro', 2015, 16),
-('Bola de Ouro', 2019, 16),
-('Bola de Ouro', 2021, 16),
-('Bola de Ouro', 2023, 16),
-('Bola de Ouro', 2018, 17),
-('Bola de Ouro', 2022, 18),
-('Bola de Ouro', 2024, 19),
-('Bola de Ouro', 2025, 20);
+('Bola de Ouro', 1956, 1),   -- Stanley Matthews (Inglaterra)
+('Bola de Ouro', 1957, 2),   -- Alfredo Di Stéfano (Argentina)
+('Bola de Ouro', 1958, 3),   -- Raymond Kopa (França)
+('Bola de Ouro', 1959, 2),   -- Alfredo Di Stéfano (Argentina)
+('Bola de Ouro', 1960, 4),   -- Luis Suárez (Espanha)
+('Bola de Ouro', 1961, 5),   -- Omar Sivori (Argentina)
+('Bola de Ouro', 1962, 6),   -- Josef Masopust (Tchéquia)
+('Bola de Ouro', 1963, 7),   -- Lev Yashin (Rússia)
+('Bola de Ouro', 1964, 8),   -- Denis Law (Escócia)
+('Bola de Ouro', 1965, 9),   -- Eusébio (Portugal)
+('Bola de Ouro', 1966, 10),  -- Bobby Charlton (Inglaterra)
+('Bola de Ouro', 1967, 11),  -- Flórián Albert (Hungria)
+('Bola de Ouro', 1968, 12),  -- George Best (Inglaterra)
+('Bola de Ouro', 1969, 13),  -- Gianni Rivera (Itália)
+('Bola de Ouro', 1970, 14),  -- Gerd Müller (Alemanha)
+('Bola de Ouro', 1971, 15),  -- Johan Cruijff (Países Baixos)
+('Bola de Ouro', 1972, 16),  -- Franz Beckenbauer (Alemanha)
+('Bola de Ouro', 1973, 15),  -- Johan Cruijff (Países Baixos)
+('Bola de Ouro', 1974, 15),  -- Johan Cruijff (Países Baixos)
+('Bola de Ouro', 1975, 17),  -- Oleg Blokhin (Ucrânia)
+('Bola de Ouro', 1976, 16),  -- Franz Beckenbauer (Alemanha)
+('Bola de Ouro', 1977, 18),  -- Allan Simonsen (Dinamarca)
+('Bola de Ouro', 1978, 19),  -- Kevin Keegan (Inglaterra)
+('Bola de Ouro', 1979, 19),  -- Kevin Keegan (Inglaterra)
+('Bola de Ouro', 1980, 20),  -- Karl-Heinz Rummenigge (Alemanha)
+('Bola de Ouro', 1981, 20),  -- Karl-Heinz Rummenigge (Alemanha)
+('Bola de Ouro', 1982, 21),  -- Paolo Rossi (Itália)
+('Bola de Ouro', 1983, 22),  -- Michel Platini (França)
+('Bola de Ouro', 1984, 22),  -- Michel Platini (França)
+('Bola de Ouro', 1985, 22),  -- Michel Platini (França)
+('Bola de Ouro', 1986, 23),  -- Igor Belanov (Ucrânia)
+('Bola de Ouro', 1987, 24),  -- Ruud Gullit (Países Baixos)
+('Bola de Ouro', 1988, 25),  -- Marco van Basten (Países Baixos)
+('Bola de Ouro', 1989, 25),  -- Marco van Basten (Países Baixos)
+('Bola de Ouro', 1990, 26),  -- Lothar Matthäus (Alemanha)
+('Bola de Ouro', 1991, 27),  -- Jean-Pierre Papin (França)
+('Bola de Ouro', 1992, 25),  -- Marco van Basten (Países Baixos)
+('Bola de Ouro', 1993, 28),  -- Roberto Baggio (Itália)
+('Bola de Ouro', 1994, 29),  -- Hristo Stoichkov (Bulgária)
+('Bola de Ouro', 1995, 30),  -- George Weah (Libéria)
+('Bola de Ouro', 1996, 31),  -- Mathias Sammer (Alemanha)
+('Bola de Ouro', 1997, 32),  -- Ronaldo (Brasil)
+('Bola de Ouro', 1998, 33),  -- Zinedine Zidane (França)
+('Bola de Ouro', 1999, 34),  -- Rivaldo (Brasil)
+('Bola de Ouro', 2000, 35),  -- Luís Figo (Portugal)
+('Bola de Ouro', 2001, 36),  -- Michael Owen (Inglaterra)
+('Bola de Ouro', 2002, 32),  -- Ronaldo (Brasil)
+('Bola de Ouro', 2003, 37),  -- Pavel Nedved (Tchéquia)
+('Bola de Ouro', 2004, 38),  -- Andriy Shevchenko (Ucrânia)
+('Bola de Ouro', 2005, 39),  -- Ronaldinho Gaúcho (Brasil)
+('Bola de Ouro', 2006, 40),  -- Fabio Cannavaro (Itália)
+('Bola de Ouro', 2007, 41),  -- Kaká (Brasil)
+('Bola de Ouro', 2008, 42),  -- Cristiano Ronaldo (Portugal)
+('Bola de Ouro', 2009, 43),  -- Lionel Messi (Argentina)
+('Bola de Ouro', 2010, 43),
+('Bola de Ouro', 2011, 43),
+('Bola de Ouro', 2012, 43),
+('Bola de Ouro', 2013, 42),
+('Bola de Ouro', 2014, 42),
+('Bola de Ouro', 2015, 43),
+('Bola de Ouro', 2016, 42),
+('Bola de Ouro', 2017, 42),
+('Bola de Ouro', 2018, 44),  -- Luka Modric (Croácia)
+('Bola de Ouro', 2019, 43),
+('Bola de Ouro', 2021, 43),
+('Bola de Ouro', 2022, 45),  -- Karim Benzema (França)
+('Bola de Ouro', 2024, 46),  -- Rodri (Espanha)
+('Bola de Ouro', 2025, 47);  -- Ousmane Dembélé (França)
+
 
 INSERT INTO Clube (Nome, Imagem) VALUES
 ('Real Madrid', '\\img\\clubes\\real_madrid.jpg'),

@@ -1,0 +1,60 @@
+@model BallonDor.ViewModels.DetailsVM
+@{
+    ViewData["Title"] = "Jogador";
+}        
+
+<div class="container mt-5 text-white">
+    <div class="row">
+        <div class="col text-center">
+            @if (Model.Anterior != null)
+            {
+                <a asp-action="Details" asp-route-id="@Model.Anterior.Id"
+                   class="btn btn-lg btn-outline-danger text-white">
+                   @Model.Anterior.Nome
+                </a>
+            }
+        </div>
+        <div class="col text-center">
+            <h1 class="fs-1">@Model.Atual.Nome</h1>
+        </div>
+        <div class="col text-center">
+            @if (Model.Proximo != null)
+            {
+                <a asp-action="Details" asp-route-id="@Model.Proximo.Id"
+                   class="btn btn-lg btn-outline-danger text-white">
+                   @Model.Proximo.Nome
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-lg-5 p-0">
+            <img class="img-fluid cursor-pointer" src="@Model.Atual.Imagem" alt="@Model.Atual.Nome">
+        </div>
+        <div class="col-lg-7 fs-5 mt-4">
+            <p class="mb-3"><strong>Nacionalidade:</strong> @Model.Atual.Nacionalidade.Nome</p>
+            <p class="mb-3"><strong>Posição:</strong> @Model.Atual.Posicao.Nome</p>
+            <p class="mb-3"><strong>Altura:</strong> @Model.Atual.Altura m</p>
+            <p class="mb-3"><strong>Descrição:</strong> @Model.Atual.Descricao</p>
+
+            <p class="fw-bold mt-4">Clubes</p>
+            <div class="d-flex flex-wrap gap-2 my-2">
+            @foreach (var jc in Model.Atual.JogadoresClubes)
+            {
+                <span class="badge bg-primary d-flex align-items-center gap-1 p-2">
+                    <img src="@jc.Clube.Imagem" alt="@jc.Clube.Nome" style="width:24px; height:24px; object-fit:cover; border-radius:50%;" />
+                </span>
+            }
+            </div>
+
+            <p class="fw-bold mt-4">Prêmios</p>
+            <div class="d-flex flex-wrap gap-2 my-2">
+                @foreach (var premio in Model.Atual.Premios)
+                {
+                    <span class="badge bg-warning text-dark">@premio.Nome (@premio.Ano)</span>
+                }
+            </div>
+        </div>
+    </div>
+</div>

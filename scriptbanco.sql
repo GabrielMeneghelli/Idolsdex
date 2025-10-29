@@ -13,43 +13,52 @@ CREATE TABLE IF NOT EXISTS Posicao (
     Nome VARCHAR(50) NOT NULL UNIQUE
 );
 
--- 🏟️ Clube (antigo Tipo)
+-- 🏟️ Clube
 CREATE TABLE IF NOT EXISTS Clube (
-	Id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	Nome VARCHAR(100) NOT NULL UNIQUE,
-	Imagem VARCHAR(200)
+    Id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL UNIQUE,
+    Imagem VARCHAR(200)
 );
 
-
--- 🧍‍♂️ Jogador (antigo Pokemon)
+-- 🧍‍♂️ Jogador
 CREATE TABLE IF NOT EXISTS Jogador (
     Id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL UNIQUE,
     NacionalidadeId INT UNSIGNED NOT NULL,
     PosicaoId INT UNSIGNED NOT NULL,
-    Altura DOUBLE(4,2) DEFAULT 0, -- metros
-    Imagem VARCHAR(200), -- foto do jogador
-    Descricao TEXT, -- biografia/carreira
-    FOREIGN KEY (NacionalidadeId) REFERENCES Nacionalidade(Id),
+    Altura DOUBLE(4,2) DEFAULT 0,  -- em metros
+    Imagem VARCHAR(200),
+    Descricao TEXT,
+    FOREIGN KEY (NacionalidadeId) REFERENCES Nacionalidade(Id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
     FOREIGN KEY (PosicaoId) REFERENCES Posicao(Id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
 );
 
--- ⚽ Relação Jogador-Clube (antigo PokemonTipo)
+-- ⚽ Relação entre Jogador e Clube
 CREATE TABLE IF NOT EXISTS JogadorClube (
     JogadorId INT UNSIGNED NOT NULL,
     ClubeId INT UNSIGNED NOT NULL,
     AnoInicio YEAR,
     AnoFim YEAR,
     PRIMARY KEY (JogadorId, ClubeId),
-    FOREIGN KEY (JogadorId) REFERENCES Jogador(Id),
+    FOREIGN KEY (JogadorId) REFERENCES Jogador(Id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
     FOREIGN KEY (ClubeId) REFERENCES Clube(Id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
 );
 
--- 🏆 Prêmios (Bola de Ouro, The Best etc.)
+-- 🏆 Prêmios (Bola de Ouro etc.)
 CREATE TABLE IF NOT EXISTS Premio (
     Id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(50) NOT NULL,
     Ano YEAR NOT NULL,
     JogadorId INT UNSIGNED NOT NULL,
     FOREIGN KEY (JogadorId) REFERENCES Jogador(Id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
 );

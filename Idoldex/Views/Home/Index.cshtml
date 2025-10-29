@@ -1,8 +1,42 @@
-﻿@{
+﻿@model List<BallonDor.Models.Jogador>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="pt-5 container">
+    <div class="row">
+        <div class="col mx-auto text-center">
+            <h1 class="display-4 text-white">Ballon d'Or Players</h1>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 mt-4">
+        @foreach (var jogador in Model)
+        {
+            <!-- Card Jogador - Início -->
+            <div class="col">
+                <a asp-action="Details" asp-route-id="@jogador.Id" class="text-decoration-none">
+                    <div class="card bg-dark text-white">
+                        <img src="@jogador.Imagem" class="card-img-top" alt="@jogador.Nome" />
+                        <div class="card-body">
+                            <h5 class="card-text mb-1">@jogador.Nacionalidade.Nome</h5>
+                            <h3 class="card-title">@jogador.Nome</h3>
+                            <p class="mb-2"><strong>Posição:</strong> @jogador.Posicao.Nome</p>
+                            <div class="d-flex flex-wrap gap-1">
+                                @foreach (var jc in jogador.JogadoresClubes)
+                                {
+                                    <span class="badge bg-primary">@jc.Clube.Nome (@jc.AnoInicio - @jc.AnoFim)</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Card Jogador - Fim -->
+        }
+
+        <div id="zeroJogadores" class="col-lg-12 text-center" hidden>
+            <h1 class="my-3 text-danger">Nenhum Jogador Encontrado</h1>
+        </div>
+    </div>
 </div>
