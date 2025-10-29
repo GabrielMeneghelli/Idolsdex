@@ -9,7 +9,7 @@
             @if (Model.Anterior != null)
             {
                 <a asp-action="Details" asp-route-id="@Model.Anterior.Id"
-                   class="btn btn-lg btn-outline-danger text-white">
+                   class="btn btn-lg text-white" style="background-color: #d4af37; border-color: #af8a10;">
                    @Model.Anterior.Nome
                 </a>
             }
@@ -21,7 +21,7 @@
             @if (Model.Proximo != null)
             {
                 <a asp-action="Details" asp-route-id="@Model.Proximo.Id"
-                   class="btn btn-lg btn-outline-danger text-white">
+                   class="btn btn-lg text-white" style="background-color: #d4af37; border-color: #af8a10;">
                    @Model.Proximo.Nome
                 </a>
             }
