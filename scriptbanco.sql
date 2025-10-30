@@ -265,7 +265,9 @@ INSERT INTO Clube (Nome, Imagem) VALUES
 ('Blackpool', '/img/clubes/blackpool.jpg'),
 ('Stoke City', '/img/clubes/stoke_city.jpg'),
 ('Dukla Praga', '/img/clubes/dukla_praga.jpg'),
-('Olympique de Marseillen', '/img/clubes/olympique_de_marseille.jpg'),
+('Sparta Praga', '/img/clubes/sparta_praga.jpg'),
+('SS Lazio', '/img/clubes/lazio.jpg'),
+('Olympique de Marseille', '/img/clubes/olympique_de_marseille.jpg'),
 ('River Plate', '/img/clubes/river_plate.jpg'),
 ('Millionarios', '/img/clubes/millionarios.jpg'),
 ('RCD Espanyol', '/img/clubes/espanyol.jpg'),
@@ -292,19 +294,18 @@ INSERT INTO Clube (Nome, Imagem) VALUES
 ('AEK Atenas', '/img/clubes/aek.jpg'),
 ('Olympiacos', '/img/clubes/olympiacos.jpg'),
 ('Palmeiras', '/img/clubes/palmeiras.jpg'),
-('Mogi Mirim', '/img/clubes/moji_mirim.jpg'),
+('Mogi Mirim', '/img/clubes/mogi_mirim.jpg'),
 ('Santa Cruz', '/img/clubes/santa_cruz.jpg'),
-('Cannes', '/img/clubes/cannes.jpg'),
+('AS Cannes', '/img/clubes/cannes.jpg'),
 ('Corinthians', '/img/clubes/corinthians.jpg'),
 ('Cruzeiro', '/img/clubes/cruzeiro.jpg'),
-('Stuttgart', '/img/clubes/stuttgart.jpg'),
+('VfB Stuttgart', '/img/clubes/stuttgart.jpg'),
 ('Dynamo Dresden', '/img/clubes/dynamo_dresden.jpg'),
 ('Al Jazira', '/img/clubes/al_jazira.jpg'),
-('Monaco', '/img/clubes/monaco.jpg'),
-('DC United', '/img/clubes/dc_united.jpg'),
+('AS Monaco', '/img/clubes/monaco.jpg'),
+('D.C. United', '/img/clubes/dc_united.jpg'),
 ('Chicago Fire', '/img/clubes/chicago.jpg'),
 ('Kashiwa Reysol', '/img/clubes/kashiwa_reysol.jpg'),
-('Al Nassr', '/img/clubes/al_nassr.jpg'),
 ('Parma', '/img/clubes/parma.jpg'),
 ('CSKA Sofia', '/img/clubes/cska_sofia.jpg'),
 ('FC Hebros', '/img/clubes/fc_hebros.jpg'),
@@ -318,13 +319,13 @@ INSERT INTO Clube (Nome, Imagem) VALUES
 ('New York Red Bulls', '/img/clubes/new_york_red_bulls.jpg'),
 ('ASV Herzogenaurach', '/img/clubes/asv_herzogenaurach.jpg'),
 ('PSV Eindhoven', '/img/clubes/psv.jpg'),
-('Haarlem', '/img/clubes/haarlem.jpg'),
+('HFC Haarlem', '/img/clubes/haarlem.jpg'),
 ('Metalurh Mariupol', '/img/clubes/metalurh_mariupol.jpg'),
 ('Eintracht Braunschweig', '/img/clubes/eintracht_braunschweig.jpg'),
 ('Chornomorets Odessa', '/img/clubes/chornomorets_odessa.jpg'),
 ('SKA Odessa', '/img/clubes/ska_odessa.jpg'),
-('Saint-Étienne', '/img/clubes/saint_etienne.jpg'),
-('Nancy', '/img/clubes/nancy.jpg'),
+('AS Saint-Étienne', '/img/clubes/saint_etienne.jpg'),
+('AS Nancy', '/img/clubes/nancy.jpg'),
 ('Verona', '/img/clubes/verona.jpg'),
 ('Lanerossi Vicenza', '/img/clubes/lanerossi_vicenza.jpg'),
 ('Servette', '/img/clubes/servette.jpg'),
@@ -368,7 +369,15 @@ INSERT INTO Clube (Nome, Imagem) VALUES
 ('Aris Limassol', '/img/clubes/aris_limassol.jpg'),
 ('Cap-Ferret', '/img/clubes/cap_ferret.jpg'),
 ('Biganos-Boiens', '/img/clubes/biganos_boiens.jpg'),
-('New York MetroStars', '/img/clubes/new_york_metrostars.jpg');
+('New York MetroStars', '/img/clubes/new_york_metrostars.jpg'),
+('RCF Vichy','/img/clubes/vichy.jpg'),
+('Hellas Verona Football Club', '/img/clubes/hellas_verona.jpg'),
+('Al-Nassr', '/img/clubes/al_nassr.jpg'),
+('Al-Ahli', '/img/clubes/al_ahli.jpg'),
+('Inter Miami', '/img/clubes/inter_miami.jpg'),
+('Al-Ittihad', '/img/clubes/al_ittihad.jpg'),
+('JS Saint-Pierroise', '/img/clubes/saint_pierroise.jpg');
+
 
 
 -- Bobby Charlton
@@ -449,10 +458,10 @@ INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
 -- Paolo Rossi
 INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
 ((SELECT Id FROM Jogador WHERE Nome = 'Paolo Rossi'), (SELECT Id FROM Clube WHERE Nome = 'Juventus'), 1973, 1975),
-((SELECT Id FROM Jogador WHERE Nome = 'Paolo Rossi'), (SELECT Id FROM Clube WHERE Nome = 'Vicenza'), 1976, 1979),
+((SELECT Id FROM Jogador WHERE Nome = 'Paolo Rossi'), (SELECT Id FROM Clube WHERE Nome = 'Lanerossi Vicenza'), 1976, 1979),
 ((SELECT Id FROM Jogador WHERE Nome = 'Paolo Rossi'), (SELECT Id FROM Clube WHERE Nome = 'Juventus'), 1981, 1985),
 ((SELECT Id FROM Jogador WHERE Nome = 'Paolo Rossi'), (SELECT Id FROM Clube WHERE Nome = 'AC Milan'), 1985, 1986),
-((SELECT Id FROM Jogador WHERE Nome = 'Paolo Rossi'), (SELECT Id FROM Clube WHERE Nome = 'Hellas Verona'), 1986, 1987);
+((SELECT Id FROM Jogador WHERE Nome = 'Paolo Rossi'), (SELECT Id FROM Clube WHERE Nome = 'Hellas Verona Football Club'), 1986, 1987);
 
 -- Michel Platini
 INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
@@ -505,14 +514,14 @@ INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
 ((SELECT Id FROM Jogador WHERE Nome = 'Jean-Pierre Papin'), (SELECT Id FROM Clube WHERE Nome = 'Bayern de Munique'), 1994, 1996),
 ((SELECT Id FROM Jogador WHERE Nome = 'Jean-Pierre Papin'), (SELECT Id FROM Clube WHERE Nome = 'Bordeaux'), 1996, 1998),
 ((SELECT Id FROM Jogador WHERE Nome = 'Jean-Pierre Papin'), (SELECT Id FROM Clube WHERE Nome = 'Guingamp'), 1998, 1999),
-((SELECT Id FROM Jogador WHERE Nome = 'Jean-Pierre Papin'), (SELECT Id FROM Clube WHERE Nome = 'Saint-Pierroise'), 1999, 2001),
+((SELECT Id FROM Jogador WHERE Nome = 'Jean-Pierre Papin'), (SELECT Id FROM Clube WHERE Nome = 'JS Saint-Pierroise'), 1999, 2001),
 ((SELECT Id FROM Jogador WHERE Nome = 'Jean-Pierre Papin'), (SELECT Id FROM Clube WHERE Nome = 'Cap-Ferret'), 2001, 2004),
 ((SELECT Id FROM Jogador WHERE Nome = 'Jean-Pierre Papin'), (SELECT Id FROM Clube WHERE Nome = 'Biganos-Boiens'), 2009, 2009);
 
 
 -- Roberto Baggio
 INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
-((SELECT Id FROM Jogador WHERE Nome = 'Roberto Baggio'), (SELECT Id FROM Clube WHERE Nome = 'Vicenza'), 1982, 1985),
+((SELECT Id FROM Jogador WHERE Nome = 'Roberto Baggio'), (SELECT Id FROM Clube WHERE Nome = 'Lanerossi Vicenza'), 1982, 1985),
 ((SELECT Id FROM Jogador WHERE Nome = 'Roberto Baggio'), (SELECT Id FROM Clube WHERE Nome = 'Fiorentina'), 1985, 1990),
 ((SELECT Id FROM Jogador WHERE Nome = 'Roberto Baggio'), (SELECT Id FROM Clube WHERE Nome = 'Juventus'), 1990, 1995),
 ((SELECT Id FROM Jogador WHERE Nome = 'Roberto Baggio'), (SELECT Id FROM Clube WHERE Nome = 'AC Milan'), 1995, 1997),
@@ -603,7 +612,7 @@ INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
 INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
 ((SELECT Id FROM Jogador WHERE Nome = 'Pavel Nedved'), (SELECT Id FROM Clube WHERE Nome = 'Dukla Praga'), 1991, 1992),
 ((SELECT Id FROM Jogador WHERE Nome = 'Pavel Nedved'), (SELECT Id FROM Clube WHERE Nome = 'Sparta Praga'), 1992, 1996),
-((SELECT Id FROM Jogador WHERE Nome = 'Pavel Nedved'), (SELECT Id FROM Clube WHERE Nome = 'Lazio'), 1996, 2001),
+((SELECT Id FROM Jogador WHERE Nome = 'Pavel Nedved'), (SELECT Id FROM Clube WHERE Nome = 'SS Lazio'), 1996, 2001),
 ((SELECT Id FROM Jogador WHERE Nome = 'Pavel Nedved'), (SELECT Id FROM Clube WHERE Nome = 'Juventus'), 2001, 2009);
 
 -- Andriy Shevchenko
@@ -632,7 +641,7 @@ INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
 ((SELECT Id FROM Jogador WHERE Nome = 'Fabio Cannavaro'), (SELECT Id FROM Clube WHERE Nome = 'Juventus'), 2004, 2006),
 ((SELECT Id FROM Jogador WHERE Nome = 'Fabio Cannavaro'), (SELECT Id FROM Clube WHERE Nome = 'Real Madrid'), 2006, 2009),
 ((SELECT Id FROM Jogador WHERE Nome = 'Fabio Cannavaro'), (SELECT Id FROM Clube WHERE Nome = 'Juventus'), 2009, 2010),
-((SELECT Id FROM Jogador WHERE Nome = 'Fabio Cannavaro'), (SELECT Id FROM Clube WHERE Nome = 'Al-Ahli'), 2010, 2011);
+((SELECT Id FROM Jogador WHERE Nome = 'Fabio Cannavaro'), (SELECT Id FROM Clube WHERE Nome = 'Al-Ahli '), 2010, 2011);
 
 -- Kaká
 INSERT IGNORE INTO JogadorClube (JogadorId, ClubeId, AnoInicio, AnoFim) VALUES
