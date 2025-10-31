@@ -42,10 +42,13 @@
             <div class="d-flex flex-wrap gap-2 my-2">
             @foreach (var jc in Model.Atual.JogadoresClubes)
             {
-                <span class="badge bg-primary d-flex align-items-center gap-1 p-2">
-                    <img src="@jc.Clube.Imagem" alt="@jc.Clube.Nome" style="width:24px; height:24px; object-fit:cover; border-radius:50%;" />
+                <span class="badge bg-primary d-flex align-items-center gap-2 p-2">
+                    <img src="@jc.Clube.Imagem" alt="@jc.Clube.Nome" 
+                        style="width:24px; height:24px; object-fit:cover; border-radius:50%;" />
+                    <span>@jc.Clube.Nome (@jc.AnoInicio - @jc.AnoFim)</span>
                 </span>
             }
+
             </div>
 
             <p class="fw-bold mt-4">Prêmios</p>
