@@ -40,9 +40,10 @@
 
             <p class="fw-bold mt-4">Clubes</p>
             <div class="d-flex flex-wrap gap-2 my-2">
-            @foreach (var jc in Model.Atual.JogadoresClubes)
+            @foreach (var jc in Model.Atual.JogadoresClubes.OrderBy(x => x.AnoInicio))
             {
-                <span class="badge bg-primary d-flex align-items-center gap-2 p-2">
+                <span class="badge d-flex align-items-center gap-2 p-2" 
+                    style="background: linear-gradient(@jc.Clube.Cor);">
                     <img src="@jc.Clube.Imagem" alt="@jc.Clube.Nome" 
                         style="width:24px; height:24px; object-fit:cover; border-radius:50%;" />
                     <span>@jc.Clube.Nome (@jc.AnoInicio - @jc.AnoFim)</span>
@@ -52,12 +53,35 @@
             </div>
 
             <p class="fw-bold mt-4">Prêmios</p>
-            <div class="d-flex flex-wrap gap-2 my-2">
-                @foreach (var premio in Model.Atual.Premios)
+            <div id="premiosContainer" class="d-flex flex-wrap gap-2 my-2" style="max-height: 60px; overflow: hidden; transition: max-height 0.3s;">
+                @foreach (var premio in Model.Atual.Premios.OrderBy(x => x.Ano))
                 {
                     <span class="badge bg-warning text-dark">@premio.Nome (@premio.Ano)</span>
                 }
             </div>
+
+            <button id="verMaisBtn" class="btn btn-sm btn-warning mt-2 fw-bold mt-2">Ver mais</button>
+
         </div>
     </div>
 </div>
+<script>
+    const container = document.getElementById('premiosContainer');
+    const btn = document.getElementById('verMaisBtn');
+
+    btn.addEventListener('click', () => {
+        if(container.style.maxHeight === 'none') {
+            container.style.maxHeight = '60px'; 
+            btn.textContent = 'Ver mais';
+        } else {
+            container.style.maxHeight = 'none';
+            btn.textContent = 'Ver menos';
+        }
+    });
+
+    window.addEventListener('load', () => {
+        if(container.scrollHeight <= container.clientHeight){
+            btn.style.display = 'none';
+        }
+    });
+</script>

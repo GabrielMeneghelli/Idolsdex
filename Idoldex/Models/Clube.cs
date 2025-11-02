@@ -17,6 +17,9 @@ namespace BallonDor.Models
         [StringLength(200)]
         public string Imagem { get; set; }
 
+        [StringLength(10)]
+        public string Cor { get; set; }
+
         // Relação N:N com Jogadores
         public List<JogadorClube> JogadoresClubes { get; set; } = new();
     }

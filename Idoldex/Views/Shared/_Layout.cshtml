@@ -13,9 +13,17 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 
-<body class="min-vh-100 d-flex flex-column justify-content-between bg-dark text-white">
+<body class="text-white"
+      style="background: linear-gradient(162deg,
+              rgba(70, 70, 70, 1) 0%,
+              rgba(20, 20, 20, 1) 50%,
+              rgba(191, 155, 48, 1) 100%);
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             background-size: cover;">
+
     <header>
-        <div class="collapse" id="navbarHeader" style="background-color: #d4af37;">
+        <div class="collapse" id="navbarHeader" style="background-color: #c2a237;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
@@ -36,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div class="navbar navbar-dark shadow-sm" style="background-color: #d4af37;">
+        <div class="navbar navbar-dark shadow-sm" style="background-color: #c2a237;">
             <div class="container">
                 <a asp-action="Index" asp-controller="Home" class="navbar-brand d-flex align-items-center">
                     <img src="~/img/favicons/favicon_ballondor.ico" alt="Ballon d'Or" class="me-2" style="width:50px; height:34px;" />
@@ -59,7 +67,7 @@
             <hr class="border-light">
             <p class="float-end">
                 <a href="#">
-                    <i class="bi bi-arrow-up-circle-fill fs-2" style="color: #d4af37;"></i>
+                    <i class="bi bi-arrow-up-circle-fill fs-2" style="color: #c2a237;"></i>
                 </a>
             </p>
             <p class="mb-1">Ballon d'Or Players - Versão Gabriel Meneghelli</p>

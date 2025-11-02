@@ -14,7 +14,6 @@ namespace BallonDor.Models
         [Required(ErrorMessage = "Informe o nome do prêmio")]
         public string Nome { get; set; } = string.Empty;
 
-        [Required]
         public ushort Ano { get; set; }
 
         [Required]

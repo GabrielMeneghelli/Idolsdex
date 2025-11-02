@@ -22,7 +22,7 @@ namespace BallonDor.Data
 
             // Chave composta da tabela intermediária JogadorClube
             modelBuilder.Entity<JogadorClube>()
-                .HasKey(jc => new { jc.JogadorId, jc.ClubeId });
+                .HasKey(jc => new { jc.Id });
 
             // Relacionamento 1:N - Jogador → Premios
             modelBuilder.Entity<Premio>()

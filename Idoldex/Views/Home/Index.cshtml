@@ -23,10 +23,10 @@
                             <h3 class="card-title">@jogador.Nome</h3>
                             <p class="mb-2"><strong>Posição:</strong> @jogador.Posicao.Nome</p>
                             <div class="d-flex flex-wrap gap-1">
-                                @foreach (var jc in jogador.JogadoresClubes)
+                                @foreach (var jc in jogador.JogadoresClubes.OrderBy(x => x.AnoInicio))
                                 {
-                                    <span class="badge bg-primary">@jc.Clube.Nome (@jc.AnoInicio - @jc.AnoFim)</span>
-                                }
+                                    <span class="badge" style="background: linear-gradient( @jc.Clube.Cor);">@jc.Clube.Nome (@jc.AnoInicio - @jc.AnoFim)</span>
+                                } 
                             </div>
                         </div>
                     </div>
@@ -40,3 +40,4 @@
         </div>
     </div>
 </div>
+
