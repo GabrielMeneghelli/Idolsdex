@@ -51,6 +51,16 @@ public class HomeController : Controller
             return NotFound();
         }
 
+        var premiosAgrupados = jogador.Premios
+        .GroupBy(p => p.Nome)
+        .Select(g => new PremioAgrupadoVM
+        {
+            Nome = g.Key,
+            Total = g.Count(),
+            Anos = string.Join(", ", g.OrderBy(p => p.Ano).Select(p => p.Ano))
+        })
+        .ToList();
+
         DetailsVM details = new()
         {
             Atual = jogador,
@@ -59,7 +69,8 @@ public class HomeController : Controller
                 .FirstOrDefault(j => j.Id < id),
             Proximo = _db.Jogadores
                 .OrderBy(j => j.Id)
-                .FirstOrDefault(j => j.Id > id)
+                .FirstOrDefault(j => j.Id > id),
+            PremiosAgrupados = premiosAgrupados 
         };
 
         return View(details);

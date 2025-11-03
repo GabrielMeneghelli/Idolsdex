@@ -54,11 +54,14 @@
 
             <p class="fw-bold mt-4">Prêmios</p>
             <div id="premiosContainer" class="d-flex flex-wrap gap-2 my-2" style="max-height: 60px; overflow: hidden; transition: max-height 0.3s;">
-                @foreach (var premio in Model.Atual.Premios.OrderBy(x => x.Ano))
+                @foreach (var premio in Model.PremiosAgrupados)
                 {
-                    <span class="badge bg-warning text-dark">@premio.Nome (@premio.Ano)</span>
+                    <span class="badge bg-warning text-dark">
+                        @premio.Nome (@($"{premio.Total}× anos: {premio.Anos}"))
+                    </span>
                 }
             </div>
+
 
             <button id="verMaisBtn" class="btn btn-sm btn-warning mt-2 fw-bold mt-2">Ver mais</button>
 
